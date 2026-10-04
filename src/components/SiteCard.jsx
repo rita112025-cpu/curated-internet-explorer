@@ -1,6 +1,6 @@
-export function SiteCard({ site, isFav, onToggleFav }){
+export function SiteCard({ site, tone=0, isFav, onToggleFav }){
   return (
-    <div className="site-card">
+    <div className={`site-card tone-${Math.max(tone,0)%5}`}>
       <a href={site.url} target="_blank" rel="noopener noreferrer" className="site-card-link">
         <div className="site-card-meta">
           <span className="site-id">#{String(site.id).padStart(2,'0')}</span>
